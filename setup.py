@@ -10,8 +10,10 @@ setup(
     url="https://github.com/Srujansgit/StegNet",
     packages=find_packages(),
     install_requires=[
-        "scapy",
         "cryptography",
+        "flask",
+        "requests",
+        "scapy",
         "typer",
     ],
     entry_points={

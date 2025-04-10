@@ -26,5 +26,8 @@ class DNSHandler(StegNetBase):
                 if hidden_msg:
                     print(f"[+] Extracted DNS message: {hidden_msg}")
 
-        print("[*] Listening for covert DNS messages...")
-        sniff(filter="udp port 53", prn=packet_callback, store=False)
+        print("[*] Listening for covert DNS messages. Press Ctrl+C to stop.")
+        try:
+            sniff(filter="udp port 53", prn=packet_callback, store=False)
+        except KeyboardInterrupt:
+            print("\n[!] Sniffing stopped by user.")

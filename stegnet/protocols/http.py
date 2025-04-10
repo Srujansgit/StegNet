@@ -29,5 +29,8 @@ class HTTPHandler(StegNetBase):
                     print(f"[+] Extracted HTTP message: {hidden_msg}")
             return "OK"
 
-        print(f"[*] Listening for covert HTTP messages on {host}:{port}...")
-        app.run(host=host, port=port)
+        print(f"[*] Listening for covert HTTP messages on {host}:{port}. Press Ctrl+C to stop.")
+        try:
+            app.run(host=host, port=port)
+        except KeyboardInterrupt:
+            print("\n[!] Sniffing stopped by user.")

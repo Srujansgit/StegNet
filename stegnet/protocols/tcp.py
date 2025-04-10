@@ -22,5 +22,8 @@ class TCPHandler(StegNetBase):
                 if hidden_msg:
                     print(f"[+] Extracted TCP message: {hidden_msg}")
 
-        print("[*] Listening for covert TCP messages...")
-        sniff(filter="tcp and port 443", prn=packet_callback, store=False)
+        print("[*] Listening for covert TCP messages. Press Ctrl+C to stop.")
+        try:
+            sniff(filter="tcp and port 443", prn=packet_callback, store=False)
+        except KeyboardInterrupt:
+            print("\n[!] Sniffing stopped by user.")

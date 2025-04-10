@@ -22,5 +22,8 @@ class ICMPHandler(StegNetBase):
                 if hidden_msg:
                     print(f"[+] Extracted ICMP message: {hidden_msg}")
 
-        print("[*] Listening for covert ICMP messages...")
-        sniff(filter="icmp", prn=packet_callback, store=False)
+        print("[*] Listening for covert ICMP messages. Press Ctrl+C to stop.")
+        try:
+            sniff(filter="icmp", prn=packet_callback, store=False)
+        except KeyboardInterrupt:
+            print("\n[!] Sniffing stopped by user.")

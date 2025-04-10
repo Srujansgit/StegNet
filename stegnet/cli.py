@@ -53,6 +53,3 @@ def analyze():
     """Run network traffic analysis to detect covert channels."""
     analyzer = TrafficAnalyzer()
     analyzer.analyze_traffic()
-
-if __name__ == "__main__":
-    app()

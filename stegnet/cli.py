@@ -1,4 +1,5 @@
 import typer
+from stegnet.core.traffic_analysis import TrafficAnalyzer
 from stegnet.protocols.tcp import TCPHandler
 from stegnet.protocols.icmp import ICMPHandler
 from stegnet.protocols.dns import DNSHandler
@@ -43,13 +44,15 @@ def receive(
     
     if mode in handler_map:
         handler = handler_map[mode](key)
-        msg = handler.receive_covert_message()
-        if msg:
-            typer.echo(f"[+] Extracted Message: {msg}")
-        else:
-            typer.echo("[*] No message extracted.")
+        handler.receive_covert_message()
     else:
         typer.echo("Invalid mode. Choose from: tcp, icmp, dns, http.")
+
+@app.command()
+def analyze():
+    """Run network traffic analysis to detect covert channels."""
+    analyzer = TrafficAnalyzer()
+    analyzer.analyze_traffic()
 
 if __name__ == "__main__":
     app()

@@ -57,8 +57,3 @@ class TrafficAnalyzer:
         if packet.haslayer(IP):
             self.detect_timing_anomalies(packet)
 
-# Example Usage
-if __name__ == "__main__":
-    analyzer = TrafficAnalyzer()
-    analyzer.analyze_traffic()
-

@@ -4,10 +4,10 @@ version = "1.0.1"
 description = "A network steganography toolkit for covert communication over TCP, ICMP, DNS, and HTTP."
 authors = [
     {name = "Abhigyan Trips",email = "contact@abhigyantrips.dev"},
-    {name = "Chilveri Srujan Kumar",email = "something@gmail.com"}
+    {name = "Chilveri Srujan Kumar",email = "srujanedu04@gmail.com"}
 ]
 readme = "docs/README.md"
-urls = {github = "https://github.com/Srujansgit/StegNet"}
+urls = {"GitHub" = "https://github.com/Srujansgit/StegNet"}
 license = {text = "MIT"}
 keywords = ["steganography", "network", "covert", "communication", "TCP", "ICMP", "DNS", "HTTP"]
 requires-python = ">=3.12,<4"
